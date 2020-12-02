@@ -2,7 +2,7 @@
 
 /**
 * Simple 2D and 3D vector library made in pure js.
-* @version 1.0.0
+* @version 1.0.1
 * @author Lorenzo Rossi - https://www.lorenzoros.si - https://github.com/lorossi/
 * @license Attribution 4.0 International (CC BY 4.0)
 */
