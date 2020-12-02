@@ -3,11 +3,15 @@ A simple and almost complete js library to handle 2D and 3D vectors. Heavily ins
 
 I needed a way to easily manage vectors for a project and I couldn't find a library that I liked, so I made one.
 
+The docs were created using [jsdoc](https://github.com/jsdoc/jsdoc) and converted in markdown with (jsdoc2md)[https://github.com/jsdoc2md/jsdoc-to-markdown].
+
 # Installation
 [Download the last build here.](https://github.com/lorossi/js-vectors/releases/tag/v1.0.0)
 
 # Reference
-[Check out the docs!](https://github.com/lorossi/js-vectors/blob/main/DOCS.md)
+[Check out the docs!](https://github.com/lorossi/js-vectors/blob/main/DOCS.md).
+
+They include examples for each method.
 
 # License
 The website is distributed under CC 4.0 License.
