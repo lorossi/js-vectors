@@ -1,3 +1,18 @@
+## Classes
+
+<dl>
+<dt><a href="#Vector">Vector</a></dt>
+<dd></dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#sub">sub()</a></dt>
+<dd><p>Alias for sub</p>
+</dd>
+</dl>
+
 <a name="Vector"></a>
 
 ## Vector
@@ -21,7 +36,11 @@
         * [.limit(s)](#Vector+limit)
         * [.setMag(s)](#Vector+setMag)
         * [.rotate(t)](#Vector+rotate)
+        * [.normalize()](#Vector+normalize)
         * [.invert(x, y, z)](#Vector+invert)
+        * [.invertX()](#Vector+invertX)
+        * [.invertY()](#Vector+invertY)
+        * [.invertZ()](#Vector+invertZ)
         * [.mag()](#Vector+mag) ⇒ <code>number</code>
         * [.magSq()](#Vector+magSq) ⇒ <code>number</code>
         * [.heading2D()](#Vector+heading2D) ⇒ <code>number</code>
@@ -46,10 +65,18 @@ Create a vector
 | [0] | <code>number</code> | y - The y value |
 | [0] | <code>number</code> | z - The z value |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, -3);
+```
+**Example**  
+```js
+v2 = new Vector(3, -5);
+```
 <a name="Vector+add"></a>
 
 ### vector.add(v)
-Add a vector together
+Add a vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
 
@@ -57,6 +84,10 @@ Add a vector together
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector to be added |
 
+**Example**  
+```js
+v1 = new Vector(1, -4, 12);v2 = new Vector(2, 9, -3);v1.add(v2);// v1 = Vector(3, 5, 9);
+```
 <a name="Vector+sub"></a>
 
 ### vector.sub(v)
@@ -68,6 +99,10 @@ Subract a vector
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector to be subracted |
 
+**Example**  
+```js
+v1 = new Vector(10, -3, 12);v2 = new Vector(7, -8, 3);v1.sub(v2);// v1 = Vector(3, 5, 9);
+```
 <a name="Vector+multiply"></a>
 
 ### vector.multiply(v)
@@ -79,6 +114,14 @@ Multiply by a vector or a scalar
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) \| <code>number</code> | The vector or scalar to be multiplied by |
 
+**Example**  
+```js
+v1 = new Vector(1, 2, 3);v2 = new Vector(2, 5, 0);v1.mult(v2);// v1 = Vector(2, 10, 0);
+```
+**Example**  
+```js
+v1 = new Vector(7, 4, 2);v1.mult(3);// v1 = Vector(21, 12, 6);
+```
 <a name="Vector+divide"></a>
 
 ### vector.divide(v)
@@ -88,12 +131,16 @@ Divide by a vector or a scalar
 
 | Param | Type | Description |
 | --- | --- | --- |
-| v | [<code>Vector</code>](#Vector) \| <code>number</code> | The vector or scalar to be divided by |
+| v | [<code>Vector</code>](#Vector) \| <code>number</code> | The vector or scalar to be divided by v1 = new Vector(4, 12, 9); v2 = new Vector(4, 6, 3); v1.divide(v2); // v1 = Vector(1, 2, 3); |
 
+**Example**  
+```js
+v1 = new Vector(9, 3, 6);v1.divide(3);// v1 = Vector(3, 1, 2);
+```
 <a name="Vector+multiply_scalar"></a>
 
 ### vector.multiply\_scalar(s)
-Multiply by a or a scalar
+Multiply by a  scalar
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
 
@@ -101,6 +148,10 @@ Multiply by a or a scalar
 | --- | --- | --- |
 | s | <code>number</code> | The scalar to be multiplied by |
 
+**Example**  
+```js
+v1 = new Vector(7, 4, 2);v1.multiply_scalar(3);// v1 = Vector(21, 12, 6);
+```
 <a name="Vector+divide_scalar"></a>
 
 ### vector.divide\_scalar(s)
@@ -112,6 +163,10 @@ Divide by a scalar
 | --- | --- | --- |
 | s | <code>number</code> | The scalar to be divided by |
 
+**Example**  
+```js
+v1 = new Vector(9, 3, 6);v1.divide_scalar(3);// v1 = Vector(3, 1, 2);
+```
 <a name="Vector+dot"></a>
 
 ### vector.dot(v)
@@ -123,6 +178,10 @@ Dot function
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector to perform dot operation with |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, 3);v2 = new Vector(2, -6, 9);v1.dot(v2);// return 5;
+```
 <a name="Vector+cross"></a>
 
 ### vector.cross(v)
@@ -134,49 +193,69 @@ Cross function
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector to perform cross operation with |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, 3);v2 = new Vector(2, -6, 9);v1.cross(v2);// v1 = Vector(54, -3, -14);
+```
 <a name="Vector+dist"></a>
 
 ### vector.dist(v) ⇒ [<code>Vector</code>](#Vector)
 Distance between vectors
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: [<code>Vector</code>](#Vector) - - Returns a vector containing the distance  
+**Returns**: [<code>Vector</code>](#Vector) - Return a vector containing the distance  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector whose distance will be calculated |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, -3);v2 = new Vector(6, -6, 7);v1.dist(v2);// v1 = Vector(-5, 10, -10);
+```
 <a name="Vector+angleBetween"></a>
 
 ### vector.angleBetween(v) ⇒ <code>number</code>
 Angle between vectors
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: <code>number</code> - - Returns a vector containing the angle in radians  
+**Returns**: <code>number</code> - Return a vector containing the angle in radians  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector whose contained angle will be calcolated |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, -3);v2 = new Vector(6, -6, 7);v1.dist(v2);// v1 = Vector(-5, 10, -10);
+```
 <a name="Vector+equals"></a>
 
 ### vector.equals(v) ⇒ <code>boolean</code>
 Check if two vectors are equals
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: <code>boolean</code> - - Returns true or false  
+**Returns**: <code>boolean</code> - Return true or false  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | v | [<code>Vector</code>](#Vector) | The vector that will be compared |
 
+**Example**  
+```js
+v1 = new Vector(1, 4, -3);v2 = new Vector(6, -6, 7);v1.equal(v2);// return false;
+```
 <a name="Vector+copy"></a>
 
 ### vector.copy() ⇒ [<code>Vector</code>](#Vector)
 Copy the vector into a new objecy
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: [<code>Vector</code>](#Vector) - - The new copied vector  
+**Returns**: [<code>Vector</code>](#Vector) - The new copied vector  
+**Example**  
+```js
+v1 = new Vector(8, 144, -32);v2 = v1.copy();// v2 = Vector(8, 144, -32);
+```
 <a name="Vector+limit"></a>
 
 ### vector.limit(s)
@@ -188,17 +267,25 @@ Limit the vector magnitude to a set value
 | --- | --- | --- |
 | s | <code>number</code> | The maximum magninute |
 
+**Example**  
+```js
+v1 = new Vector(2, 0, 2);v1.limit(2);// v1 = Vector(1.414213562373095, 0, 1.414213562373095);
+```
 <a name="Vector+setMag"></a>
 
 ### vector.setMag(s)
-Set the vector magninute
+Set the vector magnitude
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| s | <code>number</code> | Magninute |
+| s | <code>number</code> | Magnitude |
 
+**Example**  
+```js
+v1 = new Vector(2, 0, 2);v1.setMag(4);// v1 = Vector(2.82842712474619, 0, 2.82842712474619);
+```
 <a name="Vector+rotate"></a>
 
 ### vector.rotate(t)
@@ -210,6 +297,20 @@ Rotate a vector by an angle in randians
 | --- | --- | --- |
 | t | <code>number</code> | The rotation angle |
 
+**Example**  
+```js
+v1 = new Vector(2, 1);v1.rotate(Math.PI);// v1 = Vector(-2, -1, 0);
+```
+<a name="Vector+normalize"></a>
+
+### vector.normalize()
+Normalize a vector (its magnitude will be unitary)
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(5, 2, -4);v1.normalize();// v1 = Vector(0.7453559924999299, 0.29814239699997197, -0.5962847939999439);
+```
 <a name="Vector+invert"></a>
 
 ### vector.invert(x, y, z)
@@ -223,6 +324,44 @@ Invert some (or all) components of the vector
 | y | <code>boolean</code> | The y component |
 | z | <code>boolean</code> | The z component |
 
+**Example**  
+```js
+v1 = new Vector(4, -5, 7);v1.invert(true, true, true);// v1 = Vector(-4, 5, -7);
+```
+**Example**  
+```js
+v2 = new Vector(4, -1, -3);v2.invert(true, false);// v2 = Vector(-4, -1, -3);
+```
+<a name="Vector+invertX"></a>
+
+### vector.invertX()
+Invert the x component of the vector
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(4, -5, 7);v1.invertX();// v1 = Vector(-4, -5, 7);
+```
+<a name="Vector+invertY"></a>
+
+### vector.invertY()
+Invert the y component of the vector
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(4, -5, 7);v1.invertY();// v1 = Vector(4, 5, 7);
+```
+<a name="Vector+invertZ"></a>
+
+### vector.invertZ()
+Invert the z component of the vector
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(4, -5, 7);v1.invertZ();// v1 = Vector(4, -5, -7);
+```
 <a name="Vector+mag"></a>
 
 ### vector.mag() ⇒ <code>number</code>
@@ -230,27 +369,43 @@ Calculate the vector magnitude
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
 **Returns**: <code>number</code> - - The vector magnitude  
+**Example**  
+```js
+v1 = new Vector(6, -2, -1);v1.mag();// return 6.4031242374328485;
+```
 <a name="Vector+magSq"></a>
 
 ### vector.magSq() ⇒ <code>number</code>
 Calculate the vector square magnitude
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: <code>number</code> - - The vector square magnitude  
+**Returns**: <code>number</code> - The vector square magnitude  
+**Example**  
+```js
+v1 = new Vector(6, -2, -1);v1.magSq();// return 41;
+```
 <a name="Vector+heading2D"></a>
 
 ### vector.heading2D() ⇒ <code>number</code>
-Calculate the vector heading (radians)
+Calculate the vector heading (radians) - only for 2D vectors
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: <code>number</code> - - The vector heading (radians)  
+**Returns**: <code>number</code> - The vector heading (radians)  
+**Example**  
+```js
+v1 = new Vector(3, 3);v1.heading2D();// return 0.7853981633974483
+```
 <a name="Vector+toString"></a>
 
 ### vector.toString() ⇒ <code>string</code>
 Return a printable string of the vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
-**Returns**: <code>string</code> - - Printable string  
+**Returns**: <code>string</code> - Printable string  
+**Example**  
+```js
+v1 = new Vector(3, 3, -4);v1.toString();// return "x: 3, y: 3, z: -4"
+```
 <a name="Vector.fromAngle2D"></a>
 
 ### Vector.fromAngle2D([0]) ⇒ [<code>Vector</code>](#Vector)
@@ -261,8 +416,12 @@ Create a 2D vector from its angle
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [0] | <code>number</code> | theta - Theta angle |
+| [0] | <code>number</code> | theta - Theta angle (radians) |
 
+**Example**  
+```js
+v1 = new Vector.fromAngle2D(2.42);// v1 = Vector(-0.7507546047254909,0.6605812012792007, 0);
+```
 <a name="Vector.fromAngle3D"></a>
 
 ### Vector.fromAngle3D([0], [0]) ⇒ [<code>Vector</code>](#Vector)
@@ -273,9 +432,13 @@ Create a 3D vector from its angles
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [0] | <code>number</code> | theta - Theta angle |
-| [0] | <code>number</code> | phi - Phi angle |
+| [0] | <code>number</code> | theta - Theta angle (radians) |
+| [0] | <code>number</code> | phi - Phi angle (radians) |
 
+**Example**  
+```js
+v1 = new Vector.fromAngle2D(1.33, -2.44);// v1 = Vector(-0.1821516349441893, -0.6454349983343708, -0.7417778945292652);
+```
 <a name="Vector.random2D"></a>
 
 ### Vector.random2D() ⇒ [<code>Vector</code>](#Vector)
@@ -283,6 +446,10 @@ Create a random 2D vector
 
 **Kind**: static method of [<code>Vector</code>](#Vector)  
 **Returns**: [<code>Vector</code>](#Vector) - - The new vector  
+**Example**  
+```js
+v1 = new Vector.random2D();// v1 = Vector(0.2090564102081952, -0.977903582849998, 0);
+```
 <a name="Vector.random3D"></a>
 
 ### Vector.random3D() ⇒ [<code>Vector</code>](#Vector)
@@ -290,6 +457,10 @@ Create a random 3D vector
 
 **Kind**: static method of [<code>Vector</code>](#Vector)  
 **Returns**: [<code>Vector</code>](#Vector) - - The new vector  
+**Example**  
+```js
+v1 = new Vector.random3D();// v1 = Vector(-0.7651693875628326, -0.43066633476756877, 0.47858365667309205);
+```
 <a name="Vector.fromArray"></a>
 
 ### Vector.fromArray() ⇒ [<code>Vector</code>](#Vector)
@@ -299,20 +470,26 @@ Create a vector from an Array
 **Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
-// returns Vector(4, 5, 6)v = new Vector.fromArray([4, 5, 6])
+// return Vector(4, 5, 6)v = new Vector.fromArray([4, 5, 6])
 ```
 **Example**  
 ```js
-// returns Vector(1, 7, 0)v = new Vector.fromArray([1, 7])
+// return Vector(1, 7, 0)v = new Vector.fromArray([1, 7])
 ```
 <a name="Vector.fromObject"></a>
 
 ### Vector.fromObject() ⇒ [<code>Vector</code>](#Vector)
-Create a vector from an object// returns Vector(1, 5, 9)v = new Vector.fromArray({x: 5, y: 7, z: 9})
+Create a vector from an object// return Vector(1, 5, 9)v = new Vector.fromArray({x: 5, y: 7, z: 9})
 
 **Kind**: static method of [<code>Vector</code>](#Vector)  
 **Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
-// returns Vector(3, 0, 4)v = new Vector.fromArray({x: 3, z: 4})
+// return Vector(3, 0, 4)v = new Vector.fromArray({x: 3, z: 4})
 ```
+<a name="sub"></a>
+
+## sub()
+Alias for sub
+
+**Kind**: global function  
