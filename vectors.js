@@ -2,7 +2,7 @@
 
 /**
 * Simple 2D and 3D vector library made in pure js.
-* @version 1.0.1
+* @version 1.0.2
 * @author Lorenzo Rossi - https://www.lorenzoros.si - https://github.com/lorossi/
 * @license Attribution 4.0 International (CC BY 4.0)
 */
@@ -138,6 +138,28 @@ Vector.prototype = {
   */
   divide_scalar: function(s) {
     this.divide(s);
+  },
+
+  /**
+  * Return minimum component of a vector
+  * @example
+  * v1 = new Vector(3, -8, 12);
+  * v1.min();
+  * // -8
+  */
+  min: function() {
+    return Math.min(this.x, this.y, this.z);
+  },
+
+  /**
+  * Return maximum component of a vector
+  * @example
+  * v1 = new Vector(3, -8, 12);
+  * v1.max();
+  * // -12
+  */
+  max: function() {
+    return Math.max(this.x, this.y, this.z);
   },
 
   /**
