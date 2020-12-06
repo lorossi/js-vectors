@@ -27,6 +27,8 @@
         * [.divide(v)](#Vector+divide)
         * [.multiply_scalar(s)](#Vector+multiply_scalar)
         * [.divide_scalar(s)](#Vector+divide_scalar)
+        * [.min()](#Vector+min)
+        * [.max()](#Vector+max)
         * [.dot(v)](#Vector+dot)
         * [.cross(v)](#Vector+cross)
         * [.dist(v)](#Vector+dist) ⇒ [<code>Vector</code>](#Vector)
@@ -166,6 +168,26 @@ Divide by a scalar
 **Example**  
 ```js
 v1 = new Vector(9, 3, 6);v1.divide_scalar(3);// v1 = Vector(3, 1, 2);
+```
+<a name="Vector+min"></a>
+
+### vector.min()
+Return minimum component of a vector
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(3, -8, 12);v1.min();// -8
+```
+<a name="Vector+max"></a>
+
+### vector.max()
+Return maximum component of a vector
+
+**Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Example**  
+```js
+v1 = new Vector(3, -8, 12);v1.max();// -12
 ```
 <a name="Vector+dot"></a>
 
