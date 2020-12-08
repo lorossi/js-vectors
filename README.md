@@ -1,5 +1,5 @@
 # js-vectors
-A simple and almost complete js library to handle 2D and 3D vectors. Heavily inspired by p5js' vectors module.
+A simple js library to handle 2D and 3D vectors.
 
 I needed a way to easily manage vectors for a project and I couldn't find a library that I liked, so I made one.
 
