@@ -18,8 +18,8 @@
         * [.divide(v)](#Vector+divide) ⇒ [<code>Vector</code>](#Vector)
         * [.multiply_scalar(s)](#Vector+multiply_scalar) ⇒ [<code>Vector</code>](#Vector)
         * [.divide_scalar(s)](#Vector+divide_scalar) ⇒ [<code>Vector</code>](#Vector)
-        * [.min()](#Vector+min)
-        * [.max()](#Vector+max)
+        * [.min()](#Vector+min) ⇒ <code>number</code>
+        * [.max()](#Vector+max) ⇒ <code>number</code>
         * [.dot(v)](#Vector+dot) ⇒ [<code>Vector</code>](#Vector)
         * [.cross(v)](#Vector+cross) ⇒ [<code>Vector</code>](#Vector)
         * [.dist(v)](#Vector+dist) ⇒ [<code>Vector</code>](#Vector)
@@ -29,7 +29,7 @@
         * [.limit(s)](#Vector+limit) ⇒ [<code>Vector</code>](#Vector)
         * [.setMag(s)](#Vector+setMag) ⇒ [<code>Vector</code>](#Vector)
         * [.rotate(t)](#Vector+rotate) ⇒ [<code>Vector</code>](#Vector)
-        * [.normalize()](#Vector+normalize)
+        * [.normalize()](#Vector+normalize) ⇒ [<code>Vector</code>](#Vector)
         * [.invert(x, y, z)](#Vector+invert) ⇒ [<code>Vector</code>](#Vector)
         * [.invertX()](#Vector+invertX) ⇒ [<code>Vector</code>](#Vector)
         * [.invertY()](#Vector+invertY) ⇒ [<code>Vector</code>](#Vector)
@@ -169,20 +169,22 @@ v1 = new Vector(9, 3, 6);v1.divide_scalar(3);// v1 = Vector(3, 1, 2);
 ```
 <a name="Vector+min"></a>
 
-### vector.min()
+### vector.min() ⇒ <code>number</code>
 Return minimum component of a vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: <code>number</code> - The smallest component  
 **Example**  
 ```js
 v1 = new Vector(3, -8, 12);v1.min();// -8
 ```
 <a name="Vector+max"></a>
 
-### vector.max()
+### vector.max() ⇒ <code>number</code>
 Return maximum component of a vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: <code>number</code> - The biggest component  
 **Example**  
 ```js
 v1 = new Vector(3, -8, 12);v1.max();// -12
@@ -328,10 +330,11 @@ v1 = new Vector(2, 1);v1.rotate(Math.PI);// v1 = Vector(-2, -1, 0);
 ```
 <a name="Vector+normalize"></a>
 
-### vector.normalize()
+### vector.normalize() ⇒ [<code>Vector</code>](#Vector)
 Normalize a vector (its magnitude will be unitary)
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
 v1 = new Vector(5, 2, -4);v1.normalize();// v1 = Vector(0.7453559924999299, 0.29814239699997197, -0.5962847939999439);

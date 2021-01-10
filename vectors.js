@@ -158,6 +158,7 @@ Vector.prototype = {
 
   /**
   * Return minimum component of a vector
+  * @return {number} The smallest component
   * @example
   * v1 = new Vector(3, -8, 12);
   * v1.min();
@@ -169,6 +170,7 @@ Vector.prototype = {
 
   /**
   * Return maximum component of a vector
+  * @return {number} The biggest component
   * @example
   * v1 = new Vector(3, -8, 12);
   * v1.max();
@@ -333,6 +335,7 @@ Vector.prototype = {
 
   /**
   * Normalize a vector (its magnitude will be unitary)
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(5, 2, -4);
   * v1.normalize();
