@@ -2,7 +2,7 @@
 
 /**
 * Simple 2D and 3D vector library made in pure js.
-* @version 1.0.2
+* @version 1.0.3
 * @author Lorenzo Rossi - https://www.lorenzoros.si - https://github.com/lorossi/
 * @license Attribution 4.0 International (CC BY 4.0)
 */
@@ -13,6 +13,7 @@
 * @param {number} [0] x - The x value
 * @param {number} [0] y - The y value
 * @param {number} [0] z - The z value
+* @return {Vector} - The new vector
 * @example
 * v1 = new Vector(1, 4, -3);
 * @example
@@ -22,12 +23,14 @@ function Vector(x, y, z) {
   this.x = x || 0;
   this.y = y || 0;
   this.z = z || 0;
+  return this;
 }
 
 Vector.prototype = {
   /**
   * Add a vector
   * @param {Vector} v - The vector to be added
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(1, -4, 12);
   * v2 = new Vector(2, 9, -3);
@@ -39,12 +42,14 @@ Vector.prototype = {
       this.x += v.x;
       this.y += v.y;
       this.z += v.z;
+      return this;
     }
   },
 
   /**
   * Subract a vector
   * @param {Vector} v - The vector to be subracted
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(10, -3, 12);
   * v2 = new Vector(7, -8, 3);
@@ -56,6 +61,7 @@ Vector.prototype = {
       this.x -= v.x;
       this.y -= v.y;
       this.z -= v.z;
+      return this;
     }
   },
 
@@ -65,11 +71,13 @@ Vector.prototype = {
   */
   subtract: function(v) {
     sub(v);
+    return this;
   },
 
   /**
   * Multiply by a vector or a scalar
   * @param {Vector|number} v - The vector or scalar to be multiplied by
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(1, 2, 3);
   * v2 = new Vector(2, 5, 0);
@@ -85,16 +93,19 @@ Vector.prototype = {
       this.x *= v.x;
       this.y *= v.y;
       this.z *= v.z;
+      return this;
     } else if (typeof(v) === "number") {
       this.x *= v;
       this.y *= v;
       this.z *= v;
+      return this;
     }
   },
 
   /**
   * Divide by a vector or a scalar
   * @param {Vector|number} v - The vector or scalar to be divided by
+  * @return {Vector} - The new vector
   * v1 = new Vector(4, 12, 9);
   * v2 = new Vector(4, 6, 3);
   * v1.divide(v2);
@@ -109,16 +120,19 @@ Vector.prototype = {
       this.x /= v.x;
       this.y /= v.y;
       this.z /= v.z;
+      return this;
     } else if (typeof(v) === "number") {
       this.x /= v;
       this.y /= v;
       this.z /= v;
+      return this;
     }
   },
 
   /**
   * Multiply by a  scalar
   * @param {number} s - The scalar to be multiplied by
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(7, 4, 2);
   * v1.multiply_scalar(3);
@@ -126,11 +140,13 @@ Vector.prototype = {
   */
   multiply_scalar: function(s) {
     this.multiply(s);
+    return this;
   },
 
   /**
   * Divide by a scalar
   * @param {number} s - The scalar to be divided by
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(9, 3, 6);
   * v1.divide_scalar(3);
@@ -138,6 +154,7 @@ Vector.prototype = {
   */
   divide_scalar: function(s) {
     this.divide(s);
+    return this;
   },
 
   /**
@@ -165,6 +182,7 @@ Vector.prototype = {
   /**
   * Dot function
   * @param {Vector} v - The vector to perform dot operation with
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(1, 4, 3);
   * v2 = new Vector(2, -6, 9);
@@ -176,12 +194,14 @@ Vector.prototype = {
       this.x *= v.x;
       this.y *= v.y;
       this.z *= v.z;
+      return this;
     }
   },
 
   /**
   * Cross function
   * @param {Vector} v - The vector to perform cross operation with
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(1, 4, 3);
   * v2 = new Vector(2, -6, 9);
@@ -193,6 +213,7 @@ Vector.prototype = {
       this.x = this.y * v.z - this.z * v.y;
       this.y = this.z * v.x - this.x * v.z;
       this.z = this.x * v.y - this.y * v.z;
+      return this;
     }
   },
 
@@ -259,6 +280,7 @@ Vector.prototype = {
   /**
   * Limit the vector magnitude to a set value
   * @param {number} s - The maximum magninute
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(2, 0, 2);
   * v1.limit(2);
@@ -269,6 +291,7 @@ Vector.prototype = {
       let m = this.mag();
       if (m > s) {
         this.multiply(s / m);
+        return this;
       }
     }
   },
@@ -276,6 +299,7 @@ Vector.prototype = {
   /**
   * Set the vector magnitude
   * @param {number} s - Magnitude
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(2, 0, 2);
   * v1.setMag(4);
@@ -285,12 +309,14 @@ Vector.prototype = {
     if (typeof(s) === "number") {
       let m = this.mag();
       this.multiply(s / m);
+      return this;
     }
   },
 
   /**
   * Rotate a vector by an angle in randians
   * @param {number} t - The rotation angle
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(2, 1);
   * v1.rotate(Math.PI);
@@ -302,6 +328,7 @@ Vector.prototype = {
       let y2 =  Math.sin(t) * this.x + Math.cos(t) * this.y;
       this.x = x2;
       this.y = y2;
+      return this;
     }
   },
 
@@ -314,6 +341,7 @@ Vector.prototype = {
   */
   normalize: function() {
     this.divide_scalar(this.mag());
+    return this;
   },
 
   /**
@@ -321,6 +349,7 @@ Vector.prototype = {
   * @param {boolean} x - The x component
   * @param {boolean} y - The y component
   * @param {boolean} z - The z component
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(4, -5, 7);
   * v1.invert(true, true, true);
@@ -346,10 +375,13 @@ Vector.prototype = {
       this.y *= -1;
       this.z *= -1;
     }
+
+    return this;
   },
 
   /**
   * Invert the x component of the vector
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(4, -5, 7);
   * v1.invertX();
@@ -357,10 +389,12 @@ Vector.prototype = {
   */
   invertX: function() {
     this.invert(true, false, false);
+    return this;
   },
 
   /**
   * Invert the y component of the vector
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(4, -5, 7);
   * v1.invertY();
@@ -368,10 +402,12 @@ Vector.prototype = {
   */
   invertY: function() {
     this.invert(false, true, false);
+    return this;
   },
 
   /**
   * Invert the z component of the vector
+  * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(4, -5, 7);
   * v1.invertZ();
@@ -379,6 +415,7 @@ Vector.prototype = {
   */
   invertZ: function() {
     this.invert(false, false, true);
+    return this;
   },
 
   /**
