@@ -70,8 +70,7 @@ Vector.prototype = {
   * @alias sub
   */
   subtract: function(v) {
-    sub(v);
-    return this;
+    return sub(v);
   },
 
   /**

@@ -5,15 +5,6 @@
 <dd></dd>
 </dl>
 
-## Functions
-
-<dl>
-<dt><a href="#sub">sub()</a></dt>
-<dd><p>Alias for sub</p>
-</dd>
-</dl>
-
-<a name="Vector"></a>
 
 ## Vector
 **Kind**: global class  
