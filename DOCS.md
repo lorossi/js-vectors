@@ -21,28 +21,28 @@
 * [Vector](#Vector)
     * [new Vector([0], [0], [0])](#new_Vector_new)
     * _instance_
-        * [.add(v)](#Vector+add)
-        * [.sub(v)](#Vector+sub)
-        * [.multiply(v)](#Vector+multiply)
-        * [.divide(v)](#Vector+divide)
-        * [.multiply_scalar(s)](#Vector+multiply_scalar)
-        * [.divide_scalar(s)](#Vector+divide_scalar)
+        * [.add(v)](#Vector+add) ⇒ [<code>Vector</code>](#Vector)
+        * [.sub(v)](#Vector+sub) ⇒ [<code>Vector</code>](#Vector)
+        * [.multiply(v)](#Vector+multiply) ⇒ [<code>Vector</code>](#Vector)
+        * [.divide(v)](#Vector+divide) ⇒ [<code>Vector</code>](#Vector)
+        * [.multiply_scalar(s)](#Vector+multiply_scalar) ⇒ [<code>Vector</code>](#Vector)
+        * [.divide_scalar(s)](#Vector+divide_scalar) ⇒ [<code>Vector</code>](#Vector)
         * [.min()](#Vector+min)
         * [.max()](#Vector+max)
-        * [.dot(v)](#Vector+dot)
-        * [.cross(v)](#Vector+cross)
+        * [.dot(v)](#Vector+dot) ⇒ [<code>Vector</code>](#Vector)
+        * [.cross(v)](#Vector+cross) ⇒ [<code>Vector</code>](#Vector)
         * [.dist(v)](#Vector+dist) ⇒ [<code>Vector</code>](#Vector)
         * [.angleBetween(v)](#Vector+angleBetween) ⇒ <code>number</code>
         * [.equals(v)](#Vector+equals) ⇒ <code>boolean</code>
         * [.copy()](#Vector+copy) ⇒ [<code>Vector</code>](#Vector)
-        * [.limit(s)](#Vector+limit)
-        * [.setMag(s)](#Vector+setMag)
-        * [.rotate(t)](#Vector+rotate)
+        * [.limit(s)](#Vector+limit) ⇒ [<code>Vector</code>](#Vector)
+        * [.setMag(s)](#Vector+setMag) ⇒ [<code>Vector</code>](#Vector)
+        * [.rotate(t)](#Vector+rotate) ⇒ [<code>Vector</code>](#Vector)
         * [.normalize()](#Vector+normalize)
-        * [.invert(x, y, z)](#Vector+invert)
-        * [.invertX()](#Vector+invertX)
-        * [.invertY()](#Vector+invertY)
-        * [.invertZ()](#Vector+invertZ)
+        * [.invert(x, y, z)](#Vector+invert) ⇒ [<code>Vector</code>](#Vector)
+        * [.invertX()](#Vector+invertX) ⇒ [<code>Vector</code>](#Vector)
+        * [.invertY()](#Vector+invertY) ⇒ [<code>Vector</code>](#Vector)
+        * [.invertZ()](#Vector+invertZ) ⇒ [<code>Vector</code>](#Vector)
         * [.mag()](#Vector+mag) ⇒ <code>number</code>
         * [.magSq()](#Vector+magSq) ⇒ <code>number</code>
         * [.heading2D()](#Vector+heading2D) ⇒ <code>number</code>
@@ -60,6 +60,7 @@
 ### new Vector([0], [0], [0])
 Create a vector
 
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -77,10 +78,11 @@ v2 = new Vector(3, -5);
 ```
 <a name="Vector+add"></a>
 
-### vector.add(v)
+### vector.add(v) ⇒ [<code>Vector</code>](#Vector)
 Add a vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -92,10 +94,11 @@ v1 = new Vector(1, -4, 12);v2 = new Vector(2, 9, -3);v1.add(v2);// v1 = Vecto
 ```
 <a name="Vector+sub"></a>
 
-### vector.sub(v)
+### vector.sub(v) ⇒ [<code>Vector</code>](#Vector)
 Subract a vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -107,10 +110,11 @@ v1 = new Vector(10, -3, 12);v2 = new Vector(7, -8, 3);v1.sub(v2);// v1 = Vect
 ```
 <a name="Vector+multiply"></a>
 
-### vector.multiply(v)
+### vector.multiply(v) ⇒ [<code>Vector</code>](#Vector)
 Multiply by a vector or a scalar
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -126,14 +130,15 @@ v1 = new Vector(7, 4, 2);v1.mult(3);// v1 = Vector(21, 12, 6);
 ```
 <a name="Vector+divide"></a>
 
-### vector.divide(v)
+### vector.divide(v) ⇒ [<code>Vector</code>](#Vector)
 Divide by a vector or a scalar
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vectorv1 = new Vector(4, 12, 9);v2 = new Vector(4, 6, 3);v1.divide(v2);// v1 = Vector(1, 2, 3);  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| v | [<code>Vector</code>](#Vector) \| <code>number</code> | The vector or scalar to be divided by v1 = new Vector(4, 12, 9); v2 = new Vector(4, 6, 3); v1.divide(v2); // v1 = Vector(1, 2, 3); |
+| v | [<code>Vector</code>](#Vector) \| <code>number</code> | The vector or scalar to be divided by |
 
 **Example**  
 ```js
@@ -141,10 +146,11 @@ v1 = new Vector(9, 3, 6);v1.divide(3);// v1 = Vector(3, 1, 2);
 ```
 <a name="Vector+multiply_scalar"></a>
 
-### vector.multiply\_scalar(s)
+### vector.multiply\_scalar(s) ⇒ [<code>Vector</code>](#Vector)
 Multiply by a  scalar
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -156,10 +162,11 @@ v1 = new Vector(7, 4, 2);v1.multiply_scalar(3);// v1 = Vector(21, 12, 6);
 ```
 <a name="Vector+divide_scalar"></a>
 
-### vector.divide\_scalar(s)
+### vector.divide\_scalar(s) ⇒ [<code>Vector</code>](#Vector)
 Divide by a scalar
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -191,10 +198,11 @@ v1 = new Vector(3, -8, 12);v1.max();// -12
 ```
 <a name="Vector+dot"></a>
 
-### vector.dot(v)
+### vector.dot(v) ⇒ [<code>Vector</code>](#Vector)
 Dot function
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -206,10 +214,11 @@ v1 = new Vector(1, 4, 3);v2 = new Vector(2, -6, 9);v1.dot(v2);// return 5;
 ```
 <a name="Vector+cross"></a>
 
-### vector.cross(v)
+### vector.cross(v) ⇒ [<code>Vector</code>](#Vector)
 Cross function
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -280,10 +289,11 @@ v1 = new Vector(8, 144, -32);v2 = v1.copy();// v2 = Vector(8, 144, -32);
 ```
 <a name="Vector+limit"></a>
 
-### vector.limit(s)
+### vector.limit(s) ⇒ [<code>Vector</code>](#Vector)
 Limit the vector magnitude to a set value
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -295,10 +305,11 @@ v1 = new Vector(2, 0, 2);v1.limit(2);// v1 = Vector(1.414213562373095, 0, 1.41
 ```
 <a name="Vector+setMag"></a>
 
-### vector.setMag(s)
+### vector.setMag(s) ⇒ [<code>Vector</code>](#Vector)
 Set the vector magnitude
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -310,10 +321,11 @@ v1 = new Vector(2, 0, 2);v1.setMag(4);// v1 = Vector(2.82842712474619, 0, 2.82
 ```
 <a name="Vector+rotate"></a>
 
-### vector.rotate(t)
+### vector.rotate(t) ⇒ [<code>Vector</code>](#Vector)
 Rotate a vector by an angle in randians
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -335,10 +347,11 @@ v1 = new Vector(5, 2, -4);v1.normalize();// v1 = Vector(0.7453559924999299, 0.
 ```
 <a name="Vector+invert"></a>
 
-### vector.invert(x, y, z)
+### vector.invert(x, y, z) ⇒ [<code>Vector</code>](#Vector)
 Invert some (or all) components of the vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -356,30 +369,33 @@ v2 = new Vector(4, -1, -3);v2.invert(true, false);// v2 = Vector(-4, -1, -3);
 ```
 <a name="Vector+invertX"></a>
 
-### vector.invertX()
+### vector.invertX() ⇒ [<code>Vector</code>](#Vector)
 Invert the x component of the vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
 v1 = new Vector(4, -5, 7);v1.invertX();// v1 = Vector(-4, -5, 7);
 ```
 <a name="Vector+invertY"></a>
 
-### vector.invertY()
+### vector.invertY() ⇒ [<code>Vector</code>](#Vector)
 Invert the y component of the vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
 v1 = new Vector(4, -5, 7);v1.invertY();// v1 = Vector(4, 5, 7);
 ```
 <a name="Vector+invertZ"></a>
 
-### vector.invertZ()
+### vector.invertZ() ⇒ [<code>Vector</code>](#Vector)
 Invert the z component of the vector
 
 **Kind**: instance method of [<code>Vector</code>](#Vector)  
+**Returns**: [<code>Vector</code>](#Vector) - - The new vector  
 **Example**  
 ```js
 v1 = new Vector(4, -5, 7);v1.invertZ();// v1 = Vector(4, -5, -7);
