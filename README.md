@@ -13,5 +13,8 @@ The docs were created using [jsdoc](https://github.com/jsdoc/jsdoc) and converte
 
 They include examples for each method.
 
+# Websites using this library (so far)
+- [lorenzoros.si](https://lorenzoros.si/) for the moving balls in the background
+
 # License
 The website is distributed under CC 4.0 License.
