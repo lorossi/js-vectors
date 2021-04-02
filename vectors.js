@@ -106,7 +106,7 @@ Vector.prototype = {
   * @alias multiply
   */
   multiply: function (v) {
-    return mult(v);
+    return this.mult(v);
   },
 
   /**
