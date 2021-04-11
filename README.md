@@ -17,6 +17,8 @@ They include examples for each method.
 ## Websites using this library (so far)
 
 - [lorenzoros.si](https://lorenzoros.si/) for the moving balls in the background
+- [procedural-paintings](https://lorenzoros.si/procedural-paintings/) to handle all the particles
+- [boids](https://lorenzoros.si/boids/) to handle all the moving elements
 
 ## Credits
 
