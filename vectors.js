@@ -19,10 +19,10 @@
 * @example
 * v2 = new Vector(3, -5);
 */
-function Vector(x, y, z) {
-  this.x = x || 0;
-  this.y = y || 0;
-  this.z = z || 0;
+function Vector(x = 0, y = 0, z = 0) {
+  this.x = x;
+  this.y = y;
+  this.z = z;
   return this;
 }
 
@@ -142,10 +142,10 @@ Vector.prototype = {
   * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(7, 4, 2);
-  * v1.multiply_scalar(3);
+  * v1.multiplyScalar(3);
   * // v1 = Vector(21, 12, 6);
   */
-  multiply_scalar: function (s) {
+  multiplyScalar: function (s) {
     this.multiply(s);
     return this;
   },
@@ -156,10 +156,10 @@ Vector.prototype = {
   * @return {Vector} - The new vector
   * @example
   * v1 = new Vector(9, 3, 6);
-  * v1.divide_scalar(3);
+  * v1.divideScalar(3);
   * // v1 = Vector(3, 1, 2);
   */
-  divide_scalar: function (s) {
+  divideScalar: function (s) {
     this.divide(s);
     return this;
   },
@@ -200,10 +200,7 @@ Vector.prototype = {
   */
   dot: function (v) {
     if (v instanceof Vector) {
-      this.x *= v.x;
-      this.y *= v.y;
-      this.z *= v.z;
-      return this;
+      return this.x * v.x + this.y * v.y + this.z * v.z;
     }
   },
 
@@ -226,19 +223,36 @@ Vector.prototype = {
     }
   },
 
+
+  /**
+  * Square distance between vectors
+  * @param {Vector} v - The vector whose distance will be calculated
+  * @return {number} Return a number containing the square distance
+  * @example
+  * v1 = new Vector(1, 4, -3);
+  * v2 = new Vector(6, -6, 7);
+  * v1.distSq(v2);
+  * // return 225
+  */
+  distSq: function (v) {
+    if (v instanceof Vector) {
+      return Math.pow(this.x - v.x, 2) + Math.pow(this.y - v.y, 2) + Math.pow(this.z - v.z, 2);
+    }
+  },
+
   /**
   * Distance between vectors
   * @param {Vector} v - The vector whose distance will be calculated
-  * @return {Vector} Return a vector containing the distance
+  * @return {number} Return a number containing the distance
   * @example
   * v1 = new Vector(1, 4, -3);
   * v2 = new Vector(6, -6, 7);
   * v1.dist(v2);
-  * // v1 = Vector(-5, 10, -10);
+  * // return 15
   */
   dist: function (v) {
     if (v instanceof Vector) {
-      return this.sub(v);
+      return Math.sqrt(this.distSq(v));
     }
   },
 
@@ -249,8 +263,8 @@ Vector.prototype = {
   * @example
   * v1 = new Vector(1, 4, -3);
   * v2 = new Vector(6, -6, 7);
-  * v1.dist(v2);
-  * // v1 = Vector(-5, 10, -10);
+  * v1.angleBetween(v2);
+  * // return 1.0888019833827516
   */
   angleBetween: function (v) {
     if (v instanceof Vector) {
@@ -265,7 +279,7 @@ Vector.prototype = {
   * @example
   * v1 = new Vector(1, 4, -3);
   * v2 = new Vector(6, -6, 7);
-  * v1.equal(v2);
+  * v1.equals(v2);
   * // return false;
   */
   equals: function (v) {
@@ -350,7 +364,7 @@ Vector.prototype = {
   * // v1 = Vector(0.7453559924999299, 0.29814239699997197, -0.5962847939999439);
   */
   normalize: function () {
-    this.divide_scalar(this.mag());
+    this.divideScalar(this.mag());
     return this;
   },
 
