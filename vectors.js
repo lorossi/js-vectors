@@ -2,7 +2,7 @@
 
 /**
 * Simple 2D and 3D vector library made in pure js.
-* @version 1.0.4
+* @version 1.0.5
 * @author Lorenzo Rossi - https://www.lorenzoros.si - https://github.com/lorossi/
 * @license Attribution 4.0 International (CC BY 4.0)
 */
@@ -19,14 +19,14 @@
 * @example
 * v2 = new Vector(3, -5);
 */
-function Vector(x = 0, y = 0, z = 0) {
-  this.x = x;
-  this.y = y;
-  this.z = z;
-  return this;
-}
+class Vector {
+  constructor(x = 0, y = 0, z = 0) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    return this;
+  }
 
-Vector.prototype = {
   /**
   * Add a vector
   * @param {Vector} v - The vector to be added
@@ -37,14 +37,14 @@ Vector.prototype = {
   * v1.add(v2);
   * // v1 = Vector(3, 5, 9);
   */
-  add: function (v) {
+  add(v) {
     if (v instanceof Vector) {
       this.x += v.x;
       this.y += v.y;
       this.z += v.z;
       return this;
     }
-  },
+  }
 
   /**
   * Subract a vector
@@ -56,22 +56,22 @@ Vector.prototype = {
   * v1.sub(v2);
   * // v1 = Vector(3, 5, 9);
   */
-  sub: function (v) {
+  sub(v) {
     if (v instanceof Vector) {
       this.x -= v.x;
       this.y -= v.y;
       this.z -= v.z;
       return this;
     }
-  },
+  }
 
   /**
   * Alias for sub
-  * @alias subtract
+  * @borrows subtract
   */
-  subtract: function (v) {
+  subtract(v) {
     return sub(v);
-  },
+  }
 
   /**
   * Multiply by a vector or a scalar
@@ -87,7 +87,7 @@ Vector.prototype = {
   * v1.mult(3);
   * // v1 = Vector(21, 12, 6);
   */
-  mult: function (v) {
+  mult(v) {
     if (v instanceof Vector) {
       this.x *= v.x;
       this.y *= v.y;
@@ -99,15 +99,15 @@ Vector.prototype = {
       this.z *= v;
       return this;
     }
-  },
+  }
 
   /**
   * Alias for mult
-  * @alias multiply
+  * @borrows multiply
   */
-  multiply: function (v) {
+  multiply(v) {
     return this.mult(v);
-  },
+  }
 
   /**
   * Divide by a vector or a scalar
@@ -122,7 +122,7 @@ Vector.prototype = {
   * v1.divide(3);
   * // v1 = Vector(3, 1, 2);
   */
-  divide: function (v) {
+  divide(v) {
     if (v instanceof Vector) {
       this.x /= v.x;
       this.y /= v.y;
@@ -134,7 +134,7 @@ Vector.prototype = {
       this.z /= v;
       return this;
     }
-  },
+  }
 
   /**
   * Multiply by a  scalar
@@ -145,10 +145,10 @@ Vector.prototype = {
   * v1.multiplyScalar(3);
   * // v1 = Vector(21, 12, 6);
   */
-  multiplyScalar: function (s) {
+  multiplyScalar(s) {
     this.multiply(s);
     return this;
-  },
+  }
 
   /**
   * Divide by a scalar
@@ -159,10 +159,10 @@ Vector.prototype = {
   * v1.divideScalar(3);
   * // v1 = Vector(3, 1, 2);
   */
-  divideScalar: function (s) {
+  divideScalar(s) {
     this.divide(s);
     return this;
-  },
+  }
 
   /**
   * Return minimum component of a vector
@@ -172,9 +172,9 @@ Vector.prototype = {
   * v1.min();
   * // -8
   */
-  min: function () {
+  min() {
     return Math.min(this.x, this.y, this.z);
-  },
+  }
 
   /**
   * Return maximum component of a vector
@@ -184,9 +184,9 @@ Vector.prototype = {
   * v1.max();
   * // -12
   */
-  max: function () {
+  max() {
     return Math.max(this.x, this.y, this.z);
-  },
+  }
 
   /**
   * Dot function
@@ -198,11 +198,11 @@ Vector.prototype = {
   * v1.dot(v2);
   * // return 5;
   */
-  dot: function (v) {
+  dot(v) {
     if (v instanceof Vector) {
       return this.x * v.x + this.y * v.y + this.z * v.z;
     }
-  },
+  }
 
   /**
   * Cross function
@@ -214,14 +214,14 @@ Vector.prototype = {
   * v1.cross(v2);
   * // v1 = Vector(54, -3, -14);
   */
-  cross: function (v) {
+  cross(v) {
     if (v instanceof Vector) {
       this.x = this.y * v.z - this.z * v.y;
       this.y = this.z * v.x - this.x * v.z;
       this.z = this.x * v.y - this.y * v.z;
       return this;
     }
-  },
+  }
 
 
   /**
@@ -234,11 +234,11 @@ Vector.prototype = {
   * v1.distSq(v2);
   * // return 225
   */
-  distSq: function (v) {
+  distSq(v) {
     if (v instanceof Vector) {
       return Math.pow(this.x - v.x, 2) + Math.pow(this.y - v.y, 2) + Math.pow(this.z - v.z, 2);
     }
-  },
+  }
 
   /**
   * Distance between vectors
@@ -250,11 +250,11 @@ Vector.prototype = {
   * v1.dist(v2);
   * // return 15
   */
-  dist: function (v) {
+  dist(v) {
     if (v instanceof Vector) {
       return Math.sqrt(this.distSq(v));
     }
-  },
+  }
 
   /**
   * Angle between vectors
@@ -266,11 +266,11 @@ Vector.prototype = {
   * v1.angleBetween(v2);
   * // return 1.0888019833827516
   */
-  angleBetween: function (v) {
+  angleBetween(v) {
     if (v instanceof Vector) {
       return Math.acos(this.dot(this, v) / (this.mag() * v.mag()));
     }
-  },
+  }
 
   /**
   * Check if two vectors are equals
@@ -282,11 +282,11 @@ Vector.prototype = {
   * v1.equals(v2);
   * // return false;
   */
-  equals: function (v) {
+  equals(v) {
     if (v instanceof Vector) {
       return (this.x == v.x && this.y == v.y && this.z == v.z);
     }
-  },
+  }
 
   /**
   * Copy the vector into a new objecy
@@ -296,9 +296,9 @@ Vector.prototype = {
   * v2 = v1.copy();
   * // v2 = Vector(8, 144, -32);
   */
-  copy: function () {
+  copy() {
     return new Vector(this.x, this.y, this.z);
-  },
+  }
 
   /**
   * Limit the vector magnitude to a set value
@@ -309,7 +309,7 @@ Vector.prototype = {
   * v1.limit(2);
   * // v1 = Vector(1.414213562373095, 0, 1.414213562373095);
   */
-  limit: function (s) {
+  limit(s) {
     if (typeof (s) === "number") {
       let m = this.mag();
       if (m > s) {
@@ -317,7 +317,7 @@ Vector.prototype = {
         return this;
       }
     }
-  },
+  }
 
   /**
   * Set the vector magnitude
@@ -328,13 +328,13 @@ Vector.prototype = {
   * v1.setMag(4);
   * // v1 = Vector(2.82842712474619, 0, 2.82842712474619);
   */
-  setMag: function (s) {
+  setMag(s) {
     if (typeof (s) === "number") {
       let m = this.mag();
       this.multiply(s / m);
       return this;
     }
-  },
+  }
 
   /**
   * Rotate a vector by an angle in randians
@@ -345,7 +345,7 @@ Vector.prototype = {
   * v1.rotate(Math.PI);
   * // v1 = Vector(-2, -1, 0);
   */
-  rotate: function (t) {
+  rotate(t) {
     if (typeof (t) === "number") {
       let x2 = Math.cos(t) * this.x - Math.sin(t) * this.y;
       let y2 = Math.sin(t) * this.x + Math.cos(t) * this.y;
@@ -353,7 +353,7 @@ Vector.prototype = {
       this.y = y2;
       return this;
     }
-  },
+  }
 
   /**
   * Normalize a vector (its magnitude will be unitary)
@@ -363,10 +363,10 @@ Vector.prototype = {
   * v1.normalize();
   * // v1 = Vector(0.7453559924999299, 0.29814239699997197, -0.5962847939999439);
   */
-  normalize: function () {
+  normalize() {
     this.divideScalar(this.mag());
     return this;
-  },
+  }
 
   /**
   * Invert some (or all) components of the vector
@@ -383,7 +383,7 @@ Vector.prototype = {
   * v2.invert(true, false);
   * // v2 = Vector(-4, -1, -3);
   */
-  invert: function (x, y, z) {
+  invert(x, y, z) {
     if (x) {
       this.x *= -1;
     }
@@ -401,7 +401,7 @@ Vector.prototype = {
     }
 
     return this;
-  },
+  }
 
   /**
   * Invert the x component of the vector
@@ -411,10 +411,10 @@ Vector.prototype = {
   * v1.invertX();
   * // v1 = Vector(-4, -5, 7);
   */
-  invertX: function () {
+  invertX() {
     this.invert(true, false, false);
     return this;
-  },
+  }
 
   /**
   * Invert the y component of the vector
@@ -424,10 +424,10 @@ Vector.prototype = {
   * v1.invertY();
   * // v1 = Vector(4, 5, 7);
   */
-  invertY: function () {
+  invertY() {
     this.invert(false, true, false);
     return this;
-  },
+  }
 
   /**
   * Invert the z component of the vector
@@ -437,10 +437,10 @@ Vector.prototype = {
   * v1.invertZ();
   * // v1 = Vector(4, -5, -7);
   */
-  invertZ: function () {
+  invertZ() {
     this.invert(false, false, true);
     return this;
-  },
+  }
 
   /**
   * Calculate the vector magnitude
@@ -450,9 +450,9 @@ Vector.prototype = {
   * v1.mag();
   * // return 6.4031242374328485;
   */
-  mag: function () {
+  mag() {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
-  },
+  }
 
   /**
   * Calculate the vector square magnitude
@@ -462,9 +462,9 @@ Vector.prototype = {
   * v1.magSq();
   * // return 41;
   */
-  magSq: function () {
+  magSq() {
     return this.x * this.x + this.y * this.y + this.z * this.z;
-  },
+  }
 
   /**
   * Calculate the vector heading (radians) - only for 2D vectors
@@ -474,9 +474,9 @@ Vector.prototype = {
   * v1.heading2D();
   * // return 0.7853981633974483
   */
-  heading2D: function () {
+  heading2D() {
     return Math.atan2(this.y, this.x);
-  },
+  }
 
   /**
   * Return a printable string of the vector
@@ -486,87 +486,86 @@ Vector.prototype = {
   * v1.toString();
   * // return "x: 3, y: 3, z: -4"
   */
-  toString: function () {
-    return `x: ${this.x}, y: ${this.y}, z: ${this.z}`;
+  toString() {
+    return `x: ${this.x} y: ${this.y} z: ${this.z}`;
   }
-};
 
-/**
-* Create a 2D vector from its angle
-* @param {number} [0] theta - Theta angle (radians)
-* @return {Vector} - The new vector
-* @example
-* v1 = new Vector.fromAngle2D(2.42);
-* // v1 = Vector(-0.7507546047254909,0.6605812012792007, 0);
-*/
-Vector.fromAngle2D = function (theta) {
-  theta = theta || 0;
-  return new Vector(Math.cos(theta), Math.sin(theta), 0);
-};
 
-/**
-* Create a 3D vector from its angles
-* @param {number} [0] theta - Theta angle (radians)
-* @param {number} [0] phi - Phi angle (radians)
-* @return {Vector} - The new vector
-* @example
-* v1 = new Vector.fromAngle2D(1.33, -2.44);
-* // v1 = Vector(-0.1821516349441893, -0.6454349983343708, -0.7417778945292652);
-*/
-Vector.fromAngle3D = function (theta, phi) {
-  theta = theta || 0;
-  phi = phi || 0;
-  return new Vector(Math.cos(theta) * Math.cos(phi), Math.sin(phi), Math.sin(theta) * Math.cos(phi));
-};
+  /**
+  * Create a 2D vector from its angle
+  * @param {number} [0] theta - Theta angle (radians)
+  * @return {Vector} - The new vector
+  * @example
+  * v1 = new Vector().fromAngle2D(2.42);
+  * // v1 = Vector(-0.7507546047254909,0.6605812012792007, 0);
+  */
+  fromAngle2D(theta = 0) {
+    return new Vector(Math.cos(theta), Math.sin(theta), 0);
+  }
 
-/**
-* Create a random 2D vector
-* @return {Vector} - The new vector
-* @example
-* v1 = new Vector.random2D();
-* // v1 = Vector(0.2090564102081952, -0.977903582849998, 0);
-*/
-Vector.random2D = function () {
-  let theta = Math.random() * 2 * Math.PI;
-  return new Vector.fromAngle2D(theta);
-};
+  /**
+  * Create a 3D vector from its angles
+  * @param {number} [0] theta - Theta angle (radians)
+  * @param {number} [0] phi - Phi angle (radians)
+  * @return {Vector} - The new vector
+  * @example
+  * v1 = new Vector().fromAngle2D(1.33, -2.44);
+  * // v1 = Vector(-0.1821516349441893, -0.6454349983343708, -0.7417778945292652);
+  */
+  fromAngle3D(theta = 0, phi = 0) {
+    return new Vector(Math.cos(theta) * Math.cos(phi), Math.sin(phi), Math.sin(theta) * Math.cos(phi));
+  }
 
-/**
-* Create a random 3D vector
-* @return {Vector} - The new vector
-* @example
-* v1 = new Vector.random3D();
-* // v1 = Vector(-0.7651693875628326, -0.43066633476756877, 0.47858365667309205);
-*/
-Vector.random3D = function () {
-  let theta = Math.random() * 2 * Math.PI;
-  let phi = Math.random() * 2 * Math.PI;
-  return new Vector.fromAngle3D(theta, phi);
-};
+  /**
+  * Create a random 2D vector
+  * @return {Vector} - The new vector
+  * @example
+  * v1 = new Vector().random2D();
+  * // v1 = Vector(0.2090564102081952, -0.977903582849998, 0);
+  */
+  random2D() {
+    let theta = Math.random() * 2 * Math.PI;
+    return new Vector().fromAngle2D(theta);
+  }
 
-/**
-* Create a vector from an Array
-* @example
-* // return Vector(4, 5, 6)
-* v = new Vector.fromArray([4, 5, 6])
-* @example
-* // return Vector(1, 7, 0)
-* v = new Vector.fromArray([1, 7])
-* @return {Vector} - The new vector
-*/
-Vector.fromArray = function (a) {
-  return new Vector(a[0], a[1], a[2]);
-};
+  /**
+  * Create a random 3D vector
+  * @return {Vector} - The new vector
+  * @example
+  * v1 = new Vector().random3D();
+  * // v1 = Vector(-0.7651693875628326, -0.43066633476756877, 0.47858365667309205);
+  */
+  random3D() {
+    let theta = Math.random() * 2 * Math.PI;
+    let phi = Math.random() * 2 * Math.PI;
+    return new Vector().fromAngle3D(theta, phi);
+  }
 
-/**
-* Create a vector from an object
-* // return Vector(1, 5, 9)
-* v = new Vector.fromArray({x: 5, y: 7, z: 9})
-* @example
-* // return Vector(3, 0, 4)
-* v = new Vector.fromArray({x: 3, z: 4})
-* @return {Vector} - The new vector
-*/
-Vector.fromObject = function (o) {
-  return new Vector(o.x, o.y, o.z);
-};
+  /**
+  * Create a vector from an Array
+  * @example
+  * // return Vector(4, 5, 6)
+  * v = new ()Vector.fromArray([4, 5, 6])
+  * @example
+  * // return Vector(1, 7, 0)
+  * v = new Vector().fromArray([1, 7])
+  * @return {Vector} - The new vector
+  */
+  fromArray(a) {
+    return new Vector(a[0], a[1], a[2]);
+  }
+
+  /**
+  * Create a vector from an object
+  * // return Vector(1, 5, 9)
+  * v = new Vector().fromArray({x: 5, y: 7, z: 9})
+  * @example
+  * // return Vector(3, 0, 4)
+  * v = new Vector().fromArray({x: 3, z: 4})
+  * @return {Vector} - The new vector
+  */
+  fromObject(o) {
+    return new Vector(o.x, o.y, o.z);
+  }
+
+}
