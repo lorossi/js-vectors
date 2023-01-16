@@ -220,7 +220,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line22">line 22</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -298,6 +298,853 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".fromAngle2D"><span class="type-signature">(static) </span>fromAngle2D<span class="signature">(0<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a 2D vector from its angle
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">theta - Theta angle (radians)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line517">line 517</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>v1 = new Vector.fromAngle2D(2.42);// v1 = Vector(-0.7507546047254909,0.6605812012792007, 0);</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".fromAngle3D"><span class="type-signature">(static) </span>fromAngle3D<span class="signature">(0<span class="signature-attributes">opt</span>, 0<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a 3D vector from its angles
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">theta - Theta angle (radians)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">phi - Phi angle (radians)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line531">line 531</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>v1 = new Vector.fromAngle2D(1.33, -2.44);// v1 = Vector(-0.1821516349441893, -0.6454349983343708, -0.7417778945292652);</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".fromArray"><span class="type-signature">(static) </span>fromArray<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a vector from an Array
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line577">line 577</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>// return Vector(4, 5, 6)v = new Vector.fromArray([4, 5, 6])</code></pre>
+
+    <pre class="prettyprint"><code>// return Vector(1, 7, 0)v = new Vector.fromArray([1, 7])</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".fromObject"><span class="type-signature">(static) </span>fromObject<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a vector from an object
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line591">line 591</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// return Vector(3, 0, 4)v = new Vector.fromArray({x: 3, z: 4})</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".random2D"><span class="type-signature">(static) </span>random2D<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a random 2D vector
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line547">line 547</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>v1 = new Vector.random2D();// v1 = Vector(0.2090564102081952, -0.977903582849998, 0);</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".random3D"><span class="type-signature">(static) </span>random3D<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a random 3D vector
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line560">line 560</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - The new vector
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Vector.html">Vector</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>v1 = new Vector.random3D();// v1 = Vector(-0.7651693875628326, -0.43066633476756877, 0.47858365667309205);</code></pre>
+
+
 
         
             
@@ -406,7 +1253,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line40">line 40</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -429,6 +1276,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -529,7 +1405,7 @@
 
             
 
-            <td class="description last">The vector whose contained angle will be calcolated</td>
+            <td class="description last">The vector whose contained angle will be calculated</td>
         </tr>
 
     
@@ -570,7 +1446,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line269">line 269</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line271">line 271</a>
     </li></ul></dd>
     
 
@@ -593,6 +1469,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -685,7 +1590,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line299">line 299</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -849,7 +1754,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line217">line 217</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -872,6 +1777,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -1036,6 +1970,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -1177,7 +2140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line237">line 237</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line231">line 231</a>
     </li></ul></dd>
     
 
@@ -1200,6 +2163,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -1231,6 +2223,94 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>v1 = new Vector(1, 4, -3);v2 = new Vector(6, -6, 7);v1.distSq(v2);// return 225</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="div"><span class="type-signature"></span>div<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Alias for divide
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line151">line 151</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1344,7 +2424,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line125">line 125</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line131">line 131</a>
     </li></ul></dd>
     
 
@@ -1367,170 +2447,35 @@
 
 
 
-
-
-<h5>Returns:</h5>
+<h5>Throws:</h5>
 
         
-<div class="param-desc">
-    - The new vectorv1 = new Vector(4, 12, 9);v2 = new Vector(4, 6, 3);v1.divide(v2);// v1 = Vector(1, 2, 3);
-</div>
-
-
 
 <dl>
     <dt>
-        Type
+        <div class="param-desc">
+        - If the argument is not a vector or a numberv1 = new Vector(4, 12, 9);v2 = new Vector(4, 6, 3);v1.divide(v2);// v1 = Vector(1, 2, 3);
+        </div>
     </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector(9, 3, 6);v1.divide(3);// v1 = Vector(3, 1, 2);</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="divideScalar"><span class="type-signature"></span>divideScalar<span class="signature">(s)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Divide by a scalar
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>s</code></td>
-            
-
-            <td class="type">
-            
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
                 
-<span class="param-type">number</span>
+<span class="param-type">TypeError</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The scalar to be divided by</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line162">line 162</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 <h5>Returns:</h5>
@@ -1561,7 +2506,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>v1 = new Vector(9, 3, 6);v1.divideScalar(3);// v1 = Vector(3, 1, 2);</code></pre>
+    <pre class="prettyprint"><code>v1 = new Vector(9, 3, 6);v1.divide(3);// v1 = Vector(3, 1, 2);</code></pre>
 
 
 
@@ -1672,7 +2617,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line201">line 201</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -1836,7 +2781,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line285">line 285</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line287">line 287</a>
     </li></ul></dd>
     
 
@@ -1859,6 +2804,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -1890,623 +2864,6 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>v1 = new Vector(1, 4, -3);v2 = new Vector(6, -6, 7);v1.equals(v2);// return false;</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="fromAngle2D"><span class="type-signature"></span>fromAngle2D<span class="signature">(0<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a 2D vector from its angle
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>0</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">theta - Theta angle (radians)</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line502">line 502</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector().fromAngle2D(2.42);// v1 = Vector(-0.7507546047254909,0.6605812012792007, 0);</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="fromAngle3D"><span class="type-signature"></span>fromAngle3D<span class="signature">(0<span class="signature-attributes">opt</span>, 0<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a 3D vector from its angles
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>0</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">theta - Theta angle (radians)</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>0</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">phi - Phi angle (radians)</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line515">line 515</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector().fromAngle2D(1.33, -2.44);// v1 = Vector(-0.1821516349441893, -0.6454349983343708, -0.7417778945292652);</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="fromArray"><span class="type-signature"></span>fromArray<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a vector from an Array
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line554">line 554</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Examples</h5>
-    
-    <pre class="prettyprint"><code>// return Vector(4, 5, 6)v = new ()Vector.fromArray([4, 5, 6])</code></pre>
-
-    <pre class="prettyprint"><code>// return Vector(1, 7, 0)v = new Vector().fromArray([1, 7])</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="fromObject"><span class="type-signature"></span>fromObject<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a vector from an object// return Vector(1, 5, 9)v = new Vector().fromArray({x: 5, y: 7, z: 9})
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line567">line 567</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>// return Vector(3, 0, 4)v = new Vector().fromArray({x: 3, z: 4})</code></pre>
 
 
 
@@ -2568,7 +2925,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line477">line 477</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line490">line 490</a>
     </li></ul></dd>
     
 
@@ -2778,7 +3135,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line386">line 386</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line399">line 399</a>
     </li></ul></dd>
     
 
@@ -2834,6 +3191,8 @@
     <pre class="prettyprint"><code>v1 = new Vector(4, -5, 7);v1.invert(true, true, true);// v1 = Vector(-4, 5, -7);</code></pre>
 
     <pre class="prettyprint"><code>v2 = new Vector(4, -1, -3);v2.invert(true, false);// v2 = Vector(-4, -1, -3);</code></pre>
+
+    <pre class="prettyprint"><code>v3 = new Vector(4, -1, -3);v3.invert();// v3 = Vector(-4, 1, 3);</code></pre>
 
 
 
@@ -2895,7 +3254,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line414">line 414</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line427">line 427</a>
     </li></ul></dd>
     
 
@@ -3010,7 +3369,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line427">line 427</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line440">line 440</a>
     </li></ul></dd>
     
 
@@ -3125,7 +3484,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line440">line 440</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line453">line 453</a>
     </li></ul></dd>
     
 
@@ -3289,7 +3648,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line312">line 312</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line316">line 316</a>
     </li></ul></dd>
     
 
@@ -3312,6 +3671,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a number
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -3404,7 +3792,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line453">line 453</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line466">line 466</a>
     </li></ul></dd>
     
 
@@ -3519,7 +3907,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line465">line 465</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line478">line 478</a>
     </li></ul></dd>
     
 
@@ -3634,7 +4022,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line187">line 187</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -3749,7 +4137,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line175">line 175</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -3916,7 +4304,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line90">line 90</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -3939,6 +4327,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector or a number
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -4033,7 +4450,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line108">line 108</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
@@ -4060,170 +4477,6 @@
 
 
 
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="multiplyScalar"><span class="type-signature"></span>multiplyScalar<span class="signature">(s)</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Multiply by a  scalar
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>s</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The scalar to be multiplied by</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line148">line 148</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector(7, 4, 2);v1.multiplyScalar(3);// v1 = Vector(21, 12, 6);</code></pre>
 
 
 
@@ -4285,7 +4538,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line366">line 366</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line375">line 375</a>
     </li></ul></dd>
     
 
@@ -4339,236 +4592,6 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>v1 = new Vector(5, 2, -4);v1.normalize();// v1 = Vector(0.7453559924999299, 0.29814239699997197, -0.5962847939999439);</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="random2D"><span class="type-signature"></span>random2D<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a random 2D vector
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line526">line 526</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector().random2D();// v1 = Vector(0.2090564102081952, -0.977903582849998, 0);</code></pre>
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="random3D"><span class="type-signature"></span>random3D<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Vector.html">Vector</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a random 3D vector
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line538">line 538</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The new vector
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Vector.html">Vector</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>v1 = new Vector().random3D();// v1 = Vector(-0.7651693875628326, -0.43066633476756877, 0.47858365667309205);</code></pre>
 
 
 
@@ -4679,7 +4702,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line348">line 348</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line356">line 356</a>
     </li></ul></dd>
     
 
@@ -4702,6 +4725,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a number
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -4843,7 +4895,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line331">line 331</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line337">line 337</a>
     </li></ul></dd>
     
 
@@ -4866,6 +4918,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a number
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -5007,7 +5088,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line59">line 59</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -5030,6 +5111,35 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        - If the argument is not a vector
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
@@ -5122,7 +5232,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line72">line 72</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -5210,7 +5320,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line489">line 489</a>
+        <a href="vectors.js.html">vectors.js</a>, <a href="vectors.js.html#line504">line 504</a>
     </li></ul></dd>
     
 
@@ -5289,7 +5399,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Jul 20 2021 18:11:39 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Jan 16 2023 20:50:53 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
