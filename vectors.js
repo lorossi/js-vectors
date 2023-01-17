@@ -19,9 +19,9 @@
  */
 class Vector {
   constructor(x = 0, y = 0, z = 0) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+    this._x = x;
+    this._y = y;
+    this._z = z;
     return this;
   }
 
@@ -40,15 +40,15 @@ class Vector {
     if (!(v instanceof Vector))
       throw new TypeError("The argument is not a vector");
 
-    this.x += v.x;
-    this.y += v.y;
-    this.z += v.z;
+    this._x += v.x;
+    this._y += v.y;
+    this._z += v.z;
     return this;
   }
 
   /**
-   * Subract a vector
-   * @param {Vector} v - The vector to be subracted
+   * Subtract a vector
+   * @param {Vector} v - The vector to be subtracted
    * @return {Vector} - The new vector
    * @throws {TypeError} - If the argument is not a vector
    * @example
@@ -61,9 +61,9 @@ class Vector {
     if (!(v instanceof Vector))
       throw new TypeError("The argument is not a vector");
 
-    this.x -= v.x;
-    this.y -= v.y;
-    this.z -= v.z;
+    this._x -= v.x;
+    this._y -= v.y;
+    this._z -= v.z;
     return this;
   }
 
@@ -92,14 +92,14 @@ class Vector {
    */
   mult(v) {
     if (v instanceof Vector) {
-      this.x *= v.x;
-      this.y *= v.y;
-      this.z *= v.z;
+      this._x *= v.x;
+      this._y *= v.y;
+      this._z *= v.z;
       return this;
     } else if (typeof v === "number") {
-      this.x *= v;
-      this.y *= v;
-      this.z *= v;
+      this._x *= v;
+      this._y *= v;
+      this._z *= v;
       return this;
     }
 
@@ -130,14 +130,14 @@ class Vector {
    */
   divide(v) {
     if (v instanceof Vector) {
-      this.x /= v.x;
-      this.y /= v.y;
-      this.z /= v.z;
+      this._x /= v.x;
+      this._y /= v.y;
+      this._z /= v.z;
       return this;
     } else if (typeof v === "number") {
-      this.x /= v;
-      this.y /= v;
-      this.z /= v;
+      this._x /= v;
+      this._y /= v;
+      this._z /= v;
       return this;
     }
 
@@ -161,7 +161,7 @@ class Vector {
    * // -8
    */
   min() {
-    return Math.min(this.x, this.y, this.z);
+    return Math.min(this._x, this._y, this._z);
   }
 
   /**
@@ -173,7 +173,7 @@ class Vector {
    * // -12
    */
   max() {
-    return Math.max(this.x, this.y, this.z);
+    return Math.max(this._x, this._y, this._z);
   }
 
   /**
@@ -189,7 +189,7 @@ class Vector {
   dot(v) {
     if (!(v instanceof Vector))
       throw new TypeError("The argument is not a vector");
-    return this.x * v.x + this.y * v.y + this.z * v.z;
+    return this._x * v._x + this._y * v.y + this._z * v.z;
   }
 
   /**
@@ -207,13 +207,13 @@ class Vector {
     if (!(v instanceof Vector))
       throw new TypeError("The argument is not a vector");
 
-    const x = this.y * v.z - this.z * v.y;
-    const y = this.z * v.x - this.x * v.z;
-    const z = this.x * v.y - this.y * v.x;
+    const x = this._y * v.z - this._z * v.y;
+    const y = this._z * v._x - this._x * v.z;
+    const z = this._x * v.y - this._y * v._x;
 
-    this.x = x;
-    this.y = y;
-    this.z = z;
+    this._x = x;
+    this._y = y;
+    this._z = z;
     return this;
   }
 
@@ -233,9 +233,9 @@ class Vector {
       throw new TypeError("The argument is not a vector");
 
     return (
-      Math.pow(this.x - v.x, 2) +
-      Math.pow(this.y - v.y, 2) +
-      Math.pow(this.z - v.z, 2)
+      Math.pow(this._x - v._x, 2) +
+      Math.pow(this._y - v.y, 2) +
+      Math.pow(this._z - v.z, 2)
     );
   }
 
@@ -270,7 +270,9 @@ class Vector {
    */
   angleBetween(v) {
     if (!(v instanceof Vector))
-      return Math.acos(this.dot(this, v) / (this.mag() * v.mag()));
+      throw new TypeError("The argument is not a vector");
+
+    return Math.acos(this.dot(v) / (this.mag() * v.mag()));
   }
 
   /**
@@ -288,11 +290,11 @@ class Vector {
     if (!(v instanceof Vector))
       throw new TypeError("The argument is not a vector");
 
-    return this.x == v.x && this.y == v.y && this.z == v.z;
+    return this._x == v._x && this._y == v.y && this._z == v.z;
   }
 
   /**
-   * Copy the vector into a new objecy
+   * Copy the vector into a new object
    * @return {Vector} The new copied vector
    * @example
    * v1 = new Vector(8, 144, -32);
@@ -300,12 +302,12 @@ class Vector {
    * // v2 = Vector(8, 144, -32);
    */
   copy() {
-    return new Vector(this.x, this.y, this.z);
+    return new Vector(this._x, this._y, this._z);
   }
 
   /**
    * Limit the vector magnitude to a set value
-   * @param {number} s - The maximum magninute
+   * @param {number} s - The maximum magnitude
    * @return {Vector} - The new vector
    * @throws {TypeError} - If the argument is not a number
    * @example
@@ -344,7 +346,7 @@ class Vector {
   }
 
   /**
-   * Rotate a vector by an angle in randians
+   * Rotate a vector by an angle in radians
    * @param {number} t - The rotation angle
    * @return {Vector} - The new vector
    * @throws {TypeError} - If the argument is not a number
@@ -357,10 +359,10 @@ class Vector {
     if (typeof t !== "number")
       throw new TypeError("The argument is not a number");
 
-    let x = Math.cos(t) * this.x - Math.sin(t) * this.y;
-    let y = Math.sin(t) * this.x + Math.cos(t) * this.y;
-    this.x = x;
-    this.y = y;
+    let x = Math.cos(t) * this._x - Math.sin(t) * this._y;
+    let y = Math.sin(t) * this._x + Math.cos(t) * this._y;
+    this._x = x;
+    this._y = y;
     return this;
   }
 
@@ -398,19 +400,19 @@ class Vector {
    */
   invert(x, y, z) {
     if (x === true) {
-      this.x *= -1;
+      this._x *= -1;
     }
     if (y === true) {
-      this.y *= -1;
+      this._y *= -1;
     }
     if (z === true) {
-      this.z *= -1;
+      this._z *= -1;
     }
 
     if (x === undefined && y === undefined && z === undefined) {
-      this.x *= -1;
-      this.y *= -1;
-      this.z *= -1;
+      this._x *= -1;
+      this._y *= -1;
+      this._z *= -1;
     }
 
     return this;
@@ -464,7 +466,15 @@ class Vector {
    * // return 6.4031242374328485;
    */
   mag() {
-    return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+    return Math.sqrt(this._x * this._x + this._y * this._y + this._z * this._z);
+  }
+
+  /**
+   * Alias for mag()
+   * @borrows mag
+   */
+  magnitude() {
+    return this.mag();
   }
 
   /**
@@ -476,7 +486,15 @@ class Vector {
    * // return 41;
    */
   magSq() {
-    return this.x * this.x + this.y * this.y + this.z * this.z;
+    return this._x * this._x + this._y * this._y + this._z * this._z;
+  }
+
+  /**
+   * Alias for magSq()
+   * @borrows magSq
+   */
+  magnitudeSq() {
+    return this.magSq();
   }
 
   /**
@@ -488,9 +506,9 @@ class Vector {
    * // return 0.7853981633974483
    */
   heading2D() {
-    if (this.z !== 0) throw new Error("The vector is not 2D");
+    if (this._z !== 0) throw new Error("The vector is not 2D");
 
-    return Math.atan2(this.y, this.x);
+    return Math.atan2(this._y, this._x);
   }
 
   /**
@@ -502,7 +520,31 @@ class Vector {
    * // return "x: 3, y: 3, z: -4"
    */
   toString() {
-    return `Vector(x: ${this.x}, y: ${this.y}, z: ${this.z})`;
+    return `Vector(${this._x}, ${this._y}, ${this._z})`;
+  }
+
+  /**
+   * Return an array with the vector components
+   * @return {array} Array with the vector components
+   * @example
+   * v1 = new Vector(3, 3, -4);
+   * v1.toArray();
+   * // return [3, 3, -4]
+   */
+  toArray() {
+    return [this._x, this._y, this._z];
+  }
+
+  /**
+   * Return an object with the vector components
+   * @return {object} Object with the vector components
+   * @example
+   * v1 = new Vector(3, 3, -4);
+   * v1.toObject();
+   * // return { x: 3, y: 3, z: -4 }
+   */
+  toObject() {
+    return { x: this._x, y: this._y, z: this._z };
   }
 
   /**
@@ -565,6 +607,8 @@ class Vector {
 
   /**
    * Create a vector from an Array
+   * @param {Array} a - The array
+   * @return {Vector} - The new vector
    * @static
    * @example
    * // return Vector(4, 5, 6)
@@ -572,23 +616,109 @@ class Vector {
    * @example
    * // return Vector(1, 7, 0)
    * v = new Vector.fromArray([1, 7])
-   * @return {Vector} - The new vector
    */
   static fromArray(a) {
+    a = a.fill(0, 3);
     return new Vector(a[0], a[1], a[2]);
   }
 
   /**
    * Create a vector from an object
+   * @return {Vector} - The new vector
    * @static
+   * @example
    * // return Vector(1, 5, 9)
-   * v = new Vector.fromArray({x: 5, y: 7, z: 9})
+   * v = new Vector.fromArray([1, 5, 9]])
    * @example
    * // return Vector(3, 0, 4)
-   * v = new Vector.fromArray({x: 3, z: 4})
-   * @return {Vector} - The new vector
+   * v = new Vector.fromArray([3, 0, 4]])
    */
   static fromObject(o) {
     return new Vector(o.x, o.y, o.z);
+  }
+
+  /**
+   * Create a vector from its polar coordinates
+   * @param {number} r - The radius
+   * @param {number} theta - The theta angle (radians)
+   * @param {number} [0] phi - The phi angle (radians)
+   * @return {Vector} - The new vector
+   * @throws {Error} If the arguments are not numbers
+   * @static
+   */
+  static fromPolar(r, theta, phi = 0) {
+    if (r < 0) throw new Error("The radius must be positive");
+
+    const x = r * Math.sin(theta) * Math.cos(phi);
+    const y = r * Math.sin(theta) * Math.sin(phi);
+    const z = r * Math.cos(theta);
+
+    return new Vector(x, y, z);
+  }
+
+  /**
+   * Create a vector from a string
+   * @param {string} s - The string
+   * @return {Vector} - The new vector
+   * @static
+   * @throws {Error} If the string is not in the correct format
+   *
+   */
+  static fromString(s) {
+    const groups = s.match(/Vector\(([\s,0-9.-]+)\)/);
+    try {
+      const v = groups[1].split(",").fill(0, 3);
+      return new Vector(parseFloat(v[0]), parseFloat(v[1]), parseFloat(v[2]));
+    } catch (e) {
+      throw new Error("The string is not in the correct format");
+    }
+  }
+
+  /**
+   * Get the x component of the vector
+   * @return {number} The x component
+   */
+  get x() {
+    return this._x;
+  }
+
+  /**
+   * Set the x component of the vector
+   * @param {number} nx - The new x component
+   */
+  set x(nx) {
+    this._x = nx;
+  }
+
+  /**
+   * Get the y component of the vector
+   * @return {number} The y component
+   */
+  get y() {
+    return this._y;
+  }
+
+  /**
+   * Set the y component of the vector
+   * @param {number} ny - The new y component
+   */
+  set y(ny) {
+    this._y = ny;
+  }
+
+  /**
+   * Get the z component of the vector
+   * @return {number} The z component
+   */
+  get z() {
+    return this._z;
+  }
+
+  /**
+   * Set the z component of the vector
+   * @param {number} nz - The new z component
+   */
+  set z(nz) {
+    this._z = nz;
   }
 }
